@@ -1,0 +1,422 @@
+<mxfile host="app.diagrams.net" modified="2026-10-13T13:00:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="erd-ah-shoes" name="ERD Database Ah Shoes">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ================= ENTITAS USERS ================= -->
+        <mxCell id="ent_users" value="USERS&#xa;(Tabel Akun &amp; Autentikasi)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#38bdf8;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="u_col1" value="PK | id_user : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_users">
+          <mxGeometry y="30" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="u_col2" value="     username : String (Unique)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_users">
+          <mxGeometry y="56" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="u_col3" value="     password : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_users">
+          <mxGeometry y="82" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="u_col4" value="     role : Admin / Kasir / Staff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_users">
+          <mxGeometry y="108" width="200" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS STAFF ================= -->
+        <mxCell id="ent_staff" value="STAFF&#xa;(Profil Karyawan)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#818cf8;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="210" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col1" value="PK | id_staff : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#818cf8;fontStyle=1;" vertex="1" parent="ent_staff">
+          <mxGeometry y="30" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col2" value="FK | id_user : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_staff">
+          <mxGeometry y="54" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col3" value="     nama_lengkap : String (Key)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;fontStyle=1;" vertex="1" parent="ent_staff">
+          <mxGeometry y="78" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col4" value="     alamat : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_staff">
+          <mxGeometry y="102" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col5" value="     status_kerja : Tetap / Kontrak" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_staff">
+          <mxGeometry y="126" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col6" value="     jobdesk : Teknisi / Kasir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_staff">
+          <mxGeometry y="150" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col7" value="     tanggal_masuk : Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_staff">
+          <mxGeometry y="174" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s_col8" value="     no_telp : String (WA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_staff">
+          <mxGeometry y="198" width="210" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS PENGGAJIAN ================= -->
+        <mxCell id="ent_penggajian" value="PENGGAJIAN&#xa;(Master Gaji &amp; Saldo Denda)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#f59e0b;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="610" y="60" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col1" value="PK,FK | Nama_Staff : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f59e0b;fontStyle=1;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="30" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col2" value="       BPJSTK : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="54" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col3" value="       THR : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="78" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col4" value="       Keterlambatan : Decimal (Denda)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f87171;fontStyle=1;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="102" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col5" value="       Tunjangan : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="126" width="210" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_col6" value="       Cashbon : Decimal (Kasbon)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f87171;" vertex="1" parent="ent_penggajian">
+          <mxGeometry y="150" width="210" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS LOG_PENGGAJIAN ================= -->
+        <mxCell id="ent_log_gaji" value="LOG_PENGGAJIAN&#xa;(Riwayat Pencairan Gaji)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#10b981;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="890" y="60" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lg_col1" value="PK | id_log : String (PAY-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#10b981;fontStyle=1;" vertex="1" parent="ent_log_gaji">
+          <mxGeometry y="30" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg_col2" value="     tanggal : DateTime (WITA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_log_gaji">
+          <mxGeometry y="54" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg_col3" value="FK | nama_staff : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;fontStyle=1;" vertex="1" parent="ent_log_gaji">
+          <mxGeometry y="78" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg_col4" value="     total_bayar : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#34d399;fontStyle=1;" vertex="1" parent="ent_log_gaji">
+          <mxGeometry y="102" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg_col5" value="     items : JSON (Daftar Sepatu)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#cbd5e1;" vertex="1" parent="ent_log_gaji">
+          <mxGeometry y="126" width="200" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS ABSENSI ================= -->
+        <mxCell id="ent_absensi" value="ABSENSI&#xa;(Presensi GPS &amp; Foto Drive)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#ec4899;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="380" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col1" value="PK | id_absen : String (ABS-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#ec4899;fontStyle=1;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="30" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col2" value="     tanggal : Date (yyyy-MM-dd)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="52" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col3" value="     waktu_absen : Time (WITA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="74" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col4" value="FK | id_staff : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#818cf8;fontStyle=1;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="96" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col5" value="     tipe : Masuk / Pulang" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="118" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col6" value="     status : Tepat Waktu / Telat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="140" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col7" value="     menit_terlambat : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="162" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col8" value="     potongan_gaji : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f87171;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="184" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col9" value="     lokasi_lat_long : GPS (Lat,Lng)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="206" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ab_col10" value="     link_foto_drive : URL Drive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#a78bfa;" vertex="1" parent="ent_absensi">
+          <mxGeometry y="228" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS TRANSAKSI (HEADER) ================= -->
+        <mxCell id="ent_transaksi" value="TRANSAKSI&#xa;(Header Nota Penjualan)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#38bdf8;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="610" y="380" width="210" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col1" value="PK | id_transaksi : String (TRX-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="30" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col2" value="     tanggal : Date (dd-MM-yyyy)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="52" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col3" value="     waktu : Time (WITA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="74" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col4" value="     nama_pelanggan : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="96" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col5" value="     no_hp : String (WA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="118" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col6" value="     nama_kasir : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="140" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col7" value="     total_item : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="162" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col8" value="     total_harga : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#34d399;fontStyle=1;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="184" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col9" value="     metode_bayar : Tunai/QRIS" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="206" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col10" value="     status_bayar : Lunas / Belum" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="228" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="trx_col11" value="     status : Dikerjakan/Selesai/Diambil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f59e0b;fontStyle=1;" vertex="1" parent="ent_transaksi">
+          <mxGeometry y="250" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS DETAIL_TRANSAKSI (JUNCTION TABLE M:N) ================= -->
+        <mxCell id="ent_detail_trx" value="DETAIL_TRANSAKSI&#xa;★ JUNCTION TABLE (M:N) ★" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#a855f7;fontColor=#ffffff;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="890" y="380" width="230" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col1" value="PK | id_detail : String (TRX_1, TRX_2)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#c084fc;fontStyle=1;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="30" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col2" value="FK | id_transaksi : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="54" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col3" value="FK | nama_treatment : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#ec4899;fontStyle=1;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="78" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col4" value="     harga_treatment : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="102" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col5" value="     jenis_item : Sepatu/Tas/Topi" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="126" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col6" value="     merek : String (Nike, Vans, dll.)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="150" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col7" value="     warna : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="174" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col8" value="     ukuran : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="198" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col9" value="FK | nama_staff : String (Teknisi)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;fontStyle=1;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="222" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dt_col10" value="     status_gaji : Belum / Sudah Dibayar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#34d399;" vertex="1" parent="ent_detail_trx">
+          <mxGeometry y="246" width="230" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS TREATMENT ================= -->
+        <mxCell id="ent_treatment" value="TREATMENT&#xa;(Layanan Cuci &amp; Reparasi)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#ec4899;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="380" width="230" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col1" value="PK | id_treatment : String (TRT-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#ec4899;fontStyle=1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="30" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col2" value="     nama_treatment : String (Unique)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;fontStyle=1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="54" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col3" value="     harga_jual : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#34d399;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="78" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col4" value="     tipe_fee : Nominal / Persentase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="102" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col5" value="     nilai_fee : Decimal (Komisi)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="126" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col6" value="M:N| bahan_baku : Formula Multiline" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="150" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col7" value="     hpp : =CALCULATE_HPP()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#cbd5e1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="174" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col8" value="     fee_karyawan : Formula" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#cbd5e1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="198" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col9" value="     total_biaya : Formula (HPP+Fee)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#cbd5e1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="222" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="t_col10" value="     stok_kemampuan : =CALCULATE_STOK()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#38bdf8;fontStyle=1;" vertex="1" parent="ent_treatment">
+          <mxGeometry y="246" width="230" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS INVENTORY ================= -->
+        <mxCell id="ent_inventory" value="INVENTORY&#xa;(Bahan Baku &amp; Kimia)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#10b981;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="60" width="220" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col1" value="PK | id_item : String (ITM-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#10b981;fontStyle=1;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="30" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col2" value="     nama_item : String (Unique)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#fde047;fontStyle=1;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="54" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col3" value="     jenis : Detergen/Cat/Sabun" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="78" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col4" value="     satuan : ml / gr / pcs / btl" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="102" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col5" value="     harga_satuan : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="126" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col6" value="     stok : Decimal (Auto Potong Order)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#34d399;fontStyle=1;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="150" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col7" value="     merk : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="174" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inv_col8" value="FK | id_suplier : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f59e0b;fontStyle=1;" vertex="1" parent="ent_inventory">
+          <mxGeometry y="198" width="220" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS SUPLIER ================= -->
+        <mxCell id="ent_suplier" value="SUPLIER&#xa;(Vendor &amp; Pemasok)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#f59e0b;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="60" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_col1" value="PK | id_suplier : String (SUP-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f59e0b;fontStyle=1;" vertex="1" parent="ent_suplier">
+          <mxGeometry y="30" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_col2" value="     nama_suplier : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_suplier">
+          <mxGeometry y="56" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_col3" value="     kontak : String (WA/Telp)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_suplier">
+          <mxGeometry y="82" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sup_col4" value="     alamat : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_suplier">
+          <mxGeometry y="108" width="200" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS LOG_RESTOCK ================= -->
+        <mxCell id="ent_log_restock" value="LOG_RESTOCK&#xa;(Riwayat Tambah Bahan Baku)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#06b6d4;fontColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="380" width="210" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col1" value="PK | id_restock : String (RST-xxx)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#06b6d4;fontStyle=1;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="30" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col2" value="     tanggal : DateTime (WITA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="52" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col3" value="FK | id_item : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#10b981;fontStyle=1;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="74" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col4" value="     nama_item : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="96" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col5" value="     qty_masuk : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="118" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col6" value="     harga_satuan : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="140" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rst_col7" value="     total_biaya : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#f87171;" vertex="1" parent="ent_log_restock">
+          <mxGeometry y="162" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ENTITAS CAPEX & OPEX & PENGATURAN ================= -->
+        <mxCell id="ent_capex" value="CAPEX&#xa;(Aset Modal &amp; Mesin)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#64748b;fontColor=#ffffff;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col1" value="PK | id_capex : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#94a3b8;fontStyle=1;" vertex="1" parent="ent_capex">
+          <mxGeometry y="30" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col2" value="     nama_barang : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_capex">
+          <mxGeometry y="52" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col3" value="     harga_barang : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_capex">
+          <mxGeometry y="74" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col4" value="     umur_ekonomis : Bulan" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_capex">
+          <mxGeometry y="96" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col5" value="     quantity : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_capex">
+          <mxGeometry y="118" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cpx_col6" value="     sisa_umur : Formula" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_capex">
+          <mxGeometry y="140" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_opex" value="OPEX&#xa;(Beban Operasional Rutin)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#64748b;fontColor=#ffffff;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="730" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col1" value="PK | id_opex : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#94a3b8;fontStyle=1;" vertex="1" parent="ent_opex">
+          <mxGeometry y="30" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col2" value="     nama_pengeluaran : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_opex">
+          <mxGeometry y="52" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col3" value="     kategori : Listrik/Sewa/dll." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_opex">
+          <mxGeometry y="74" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col4" value="     nominal : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_opex">
+          <mxGeometry y="96" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col5" value="     quantity : Decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_opex">
+          <mxGeometry y="118" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="opx_col6" value="     total_biaya : =D*E" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;fontColor=#e2e8f0;" vertex="1" parent="ent_opex">
+          <mxGeometry y="140" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ================= RELASI LINES (CROW'S FOOT NOTATION) ================= -->
+
+        <!-- 1:1 USERS to STAFF -->
+        <mxCell id="rel_u_s" value="1 : 1 (Autentikasi Akun)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERone;strokeColor=#38bdf8;strokeWidth=2;fontColor=#38bdf8;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_users" target="ent_staff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:1 STAFF to PENGGAJIAN -->
+        <mxCell id="rel_s_pg" value="1 : 1 (Master Saldo Gaji)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERone;strokeColor=#f59e0b;strokeWidth=2;fontColor=#f59e0b;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_staff" target="ent_penggajian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N STAFF to LOG_PENGGAJIAN -->
+        <mxCell id="rel_s_lg" value="1 : N (Riwayat Slip Gaji)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#10b981;strokeWidth=2;fontColor=#10b981;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_penggajian" target="ent_log_gaji">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N STAFF to ABSENSI -->
+        <mxCell id="rel_s_ab" value="1 : N (Log Kehadiran Harian)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#ec4899;strokeWidth=2;fontColor=#ec4899;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_staff" target="ent_absensi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N TRANSAKSI to DETAIL_TRANSAKSI -->
+        <mxCell id="rel_trx_dt" value="1 : N (Item Rincian Order)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#38bdf8;strokeWidth=2;fontColor=#38bdf8;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_transaksi" target="ent_detail_trx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N TREATMENT to DETAIL_TRANSAKSI -->
+        <mxCell id="rel_t_dt" value="1 : N (Layanan Diambil)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERmany;endArrow=ERone;strokeColor=#ec4899;strokeWidth=2;fontColor=#ec4899;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_detail_trx" target="ent_treatment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N STAFF to DETAIL_TRANSAKSI (Teknisi) -->
+        <mxCell id="rel_s_dt" value="1 : N (Teknisi Pengerjaan)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#818cf8;strokeWidth=2;fontColor=#818cf8;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_staff" target="ent_detail_trx">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="340" />
+              <mxPoint x="950" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 1:N SUPLIER to INVENTORY -->
+        <mxCell id="rel_sup_inv" value="1 : N (Pemasok Bahan Baku)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#f59e0b;strokeWidth=2;fontColor=#f59e0b;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_suplier" target="ent_inventory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 1:N INVENTORY to LOG_RESTOCK -->
+        <mxCell id="rel_inv_rst" value="1 : N (Riwayat Restock)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;endArrow=ERmany;strokeColor=#06b6d4;strokeWidth=2;fontColor=#06b6d4;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_inventory" target="ent_log_restock">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1440" y="160" />
+              <mxPoint x="1440" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- M:N INVENTORY to TREATMENT (Resep Bahan Baku) -->
+        <mxCell id="rel_inv_trt" value="M : N (Resep Takaran Bahan Baku &amp; Auto Potong Stok)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERmany;endArrow=ERmany;strokeColor=#10b981;strokeWidth=3;fontColor=#34d399;fontSize=11;labelBackgroundColor=#0f172a;" edge="1" parent="1" source="ent_inventory" target="ent_treatment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

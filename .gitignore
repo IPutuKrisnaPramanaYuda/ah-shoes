@@ -1,0 +1,22 @@
+# Large binary files (Upload ke GitHub Releases bukan repo)
+*.apk
+*.aab
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Flutter build & dependencies
+erpahshoes/.dart_tool/
+erpahshoes/.flutter-plugins
+erpahshoes/.flutter-plugins-dependencies
+erpahshoes/.pub-cache/
+erpahshoes/.pub/
+erpahshoes/build/
+
+# Credentials & secrets
+*.key
+*.keystore
+*.jks
